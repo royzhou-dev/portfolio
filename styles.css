@@ -1,0 +1,602 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* ===== CSS Variables ===== */
+:root {
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-border: #334155;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-home: #60a5fa;
+  --color-experience: #4ade80;
+  --color-projects: #f472b6;
+  --color-contact: #fbbf24;
+  --max-width: 1100px;
+  --nav-height: 64px;
+  --radius: 8px;
+}
+
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* ===== Navigation ===== */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 100;
+  border-bottom: 1px solid var(--color-border);
+}
+
+nav ul {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  list-style: none;
+}
+
+nav ul li a {
+  display: block;
+  padding: 20px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  transition: color 0.15s ease;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: var(--color);
+  transform: scaleX(0);
+  transition: transform 0.15s ease;
+}
+
+nav ul li a:hover {
+  color: var(--color);
+}
+
+nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ===== Section Base ===== */
+section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px 24px;
+  scroll-margin-top: var(--nav-height);
+}
+
+section h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+/* ===== Home Section ===== */
+#home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--nav-height);
+  padding-bottom: 0;
+}
+
+#home h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+#home h1 .name {
+  color: var(--color-home);
+}
+
+#home p {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  max-width: 640px;
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 0.1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== Experience Section ===== */
+#experience h1 {
+  color: var(--color-experience);
+}
+
+#experience .tablist {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+
+#experience .tablist .tablist-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--color-text);
+}
+
+#experience .tablist .tablist-content {
+  display: flex;
+  gap: 32px;
+}
+
+#experience .tablist .tablist-content .list {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  position: relative;
+}
+
+#experience .tablist .tablist-content .list label {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: color 0.15s ease;
+  z-index: 2;
+}
+
+#experience .tablist .tablist-content .list label:hover {
+  color: var(--color-experience);
+}
+
+#experience .tablist .tablist-content .indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 40px;
+  width: 100%;
+  background: rgba(74, 222, 128, 0.1);
+  border-left: 2px solid var(--color-experience);
+  border-radius: 0 4px 4px 0;
+  transition: top 0.15s ease;
+}
+
+#experience .tablist .tablist-content .text-content {
+  flex: 1;
+}
+
+#experience .tablist .tablist-content .text-content .text {
+  display: none;
+}
+
+#experience .tablist .tablist-content .text-content .text .title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--color-text);
+}
+
+#experience .tablist .tablist-content .text-content .text .title a {
+  color: var(--color-experience);
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+#experience .tablist .tablist-content .text-content .text .title a:hover {
+  opacity: 0.8;
+}
+
+#experience .tablist .tablist-content .text-content .text ul {
+  color: var(--color-text-muted);
+  padding-left: 20px;
+}
+
+#experience .tablist .tablist-content .text-content .text ul li {
+  margin-bottom: 12px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+#experience .tablist .tablist-content .text-content .job1 {
+  display: block;
+}
+
+#experience .tablist .tablist-content input {
+  display: none;
+}
+
+#experience .tablist #job1:checked ~ .list label.job1,
+#experience .tablist #job2:checked ~ .list label.job2,
+#experience .tablist #job3:checked ~ .list label.job3,
+#experience .tablist #job4:checked ~ .list label.job4,
+#experience .tablist #job5:checked ~ .list label.job5 {
+  color: var(--color-experience);
+}
+
+#experience .tablist #job1:checked ~ .list .indicator {
+  top: 0;
+}
+
+#experience .tablist #job2:checked ~ .list .indicator {
+  top: 40px;
+}
+
+#experience .tablist #job3:checked ~ .list .indicator {
+  top: 80px;
+}
+
+#experience .tablist #job4:checked ~ .list .indicator {
+  top: 120px;
+}
+
+#experience .tablist #job5:checked ~ .list .indicator {
+  top: 160px;
+}
+
+#experience .tablist #job1:checked ~ .text-content .job1,
+#experience .tablist #job2:checked ~ .text-content .job2,
+#experience .tablist #job3:checked ~ .text-content .job3,
+#experience .tablist #job4:checked ~ .text-content .job4,
+#experience .tablist #job5:checked ~ .text-content .job5 {
+  display: block;
+}
+
+#experience .tablist #job2:checked ~ .text-content .job1,
+#experience .tablist #job3:checked ~ .text-content .job1,
+#experience .tablist #job4:checked ~ .text-content .job1,
+#experience .tablist #job5:checked ~ .text-content .job1 {
+  display: none;
+}
+
+#experience .experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+#experience .experience-tags span {
+  padding: 4px 8px;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-background);
+  border-radius: 4px;
+}
+
+/* ===== Projects Section ===== */
+#projects h1 {
+  color: var(--color-projects);
+}
+
+#projects .projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+#projects .projects .project {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+#projects .projects .project:hover {
+  border-color: var(--color-text-muted);
+  transform: translateY(-2px);
+}
+
+#projects .projects .project .project-image {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-border);
+}
+
+#projects .projects .project .project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.15s ease;
+}
+
+#projects .projects .project:hover .project-image img {
+  transform: scale(1.02);
+}
+
+#projects .projects .project .project-content {
+  padding: 16px;
+}
+
+#projects .projects .project .project-content h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+#projects .projects .project .project-content p {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+#projects .projects .project .project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+#projects .projects .project .project-tags span {
+  padding: 4px 8px;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-background);
+  border-radius: 4px;
+}
+
+#projects .projects .project .project-links {
+  display: flex;
+  gap: 8px;
+}
+
+#projects .projects .project .project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+#projects .projects .project .project-links a:hover {
+  border-color: var(--color-text-muted);
+  background: var(--color-border);
+}
+
+/* ===== Contact Section ===== */
+#contact h1 {
+  color: var(--color-contact);
+}
+
+#contact form {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 32px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+#contact form h1 {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 24px;
+  color: var(--color-text);
+}
+
+#contact form label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+
+#contact form input,
+#contact form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.15s ease;
+}
+
+#contact form input:focus,
+#contact form textarea:focus {
+  border-color: var(--color-contact);
+}
+
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+#contact form .center {
+  text-align: center;
+  margin-top: 8px;
+}
+
+#contact form input[type="submit"] {
+  width: auto;
+  padding: 12px 32px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-background);
+  background: var(--color-contact);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+#contact form input[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+/* ===== Footer ===== */
+#footer {
+  padding: 48px 24px;
+  text-align: center;
+}
+
+#footer .links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+#footer .links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+#footer .links a:hover {
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  #projects .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 64px 20px;
+  }
+
+  #home h1 {
+    font-size: 2.25rem;
+  }
+
+  #experience .tablist {
+    padding: 24px;
+  }
+
+  #experience .tablist .tablist-content {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  #experience .tablist .tablist-content .list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #experience .tablist .tablist-content .list label {
+    height: auto;
+    padding: 8px 12px;
+    background: var(--color-background);
+    border-radius: 6px;
+  }
+
+  #experience .tablist .tablist-content .indicator {
+    display: none;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  #contact form {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  #projects .projects {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  #home h1 {
+    font-size: 1.875rem;
+  }
+
+  section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+}

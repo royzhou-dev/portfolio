@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Roy Zhou</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li style="--color:#0096e4"><a href="#home" data-text="&nbsp;home">&nbsp;home</a></li>
+            <li style="--color:#29c256"><a href="#experience" data-text="&nbsp;experience">&nbsp;experience</a></li>
+            <li style="--color:#f37fa1"><a href="#projects" data-text="&nbsp;projects">&nbsp;projects</a></li>
+            <li style="--color:#f0cf2b"><a href="#contact" data-text="&nbsp;contact">&nbsp;contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1>Hi, I'm <span class="name">Roy</span>. Welcome to my portfolio!</h1>
+        <p>
+            I'm a Data Scientist at BNY, where I design and deploy enterprise AI/ML solutions. My work focuses on building intelligent agents, NLP models, and data governance tools that drive operational efficiency and improve decision-making at scale.<br><br>
+            I'm passionate about applying machine learning to solve complex business problems. Feel free to explore my work and reach out!
+        </p>
+    </section>
+
+    <section id="experience">
+        <h1>Experience</h1>
+
+        <div class="tablist">
+            <div class="tablist-title">Where I've Worked</div>
+            <div class="tablist-content">
+                <input type="radio" name="indicator" checked id="job1">
+                <input type="radio" name="indicator" id="job2">
+                <input type="radio" name="indicator" id="job3">
+                <input type="radio" name="indicator" id="job4">
+                <input type="radio" name="indicator" id="job5">
+                <div class="list">
+                    <label for="job1" class="job1">
+                        <span class="title">BNY</span>
+                    </label>
+                    <label for="job2" class="job2">
+                        <span class="title">Octavate</span>
+                    </label>
+                    <label for="job3" class="job3">
+                        <span class="title">Instinet</span>
+                    </label>
+                    <label for="job4" class="job4">
+                        <span class="title">Sagerize</span>
+                    </label>
+                    <div class="indicator"></div>
+                </div>
+                <div class="text-content">
+                    <div class="job1 text">
+                        <div class="title">Data Scientist @ <a href="https://www.bnymellon.com/">BNY</a>
+                        </div>
+                        <ul>
+                            <li>
+                                Designed and deployed enterprise AI/ML solutions for the bank’s data platform.
+                            </li>
+                            <li>
+                                Built an agent integrated with a larger digital employee to extract and standardize data from unstructured financial documents, achieving 96% extraction accuracy and reducing manual processing to allow teams to focus on analytics and strategic work.
+                            </li>
+                            <li>
+                                Led development of an AI-assistant trained on technical documentation and enterprise knowledge sources to deliver role-aware, context-sensitive support across products and features for 1,400+ employees, improving self-service, reducing support load, and accelerating data onboarding.
+                            </li>
+                            <li>
+                                Engineered the company's first regulatory agent for reviewing supervisory findings, auditing remediation progress, handling CSI securely, and drafting responses, successfully addressing 15+ findings from regulators.
+                            </li>
+                            <li>
+                                Developed a data governance tool that orchestrated multiple agents to automate generation of data dictionaries, standardized business terms, and data quality rules to enhance metadata accuracy, enforce a single source of truth, and improve enterprise data quality.
+                            </li>
+                            <li>
+                                Developed a RoBERTa-based sequence classification model to assign sensitivity levels to data lake elements, leveraging NLP to improve compliance for over 2000 datasets.
+                            </li>
+                            <li>
+                                Implemented an ARIMA-based time series anomaly detection model to identify abnormal data ingestion patterns in the data platform, proactively detecting pipeline issues and supporting operational monitoring.
+                            </li>
+                            <li>
+                                Implemented an ARIMA-based time series anomaly detection model to identify abnormal data ingestion patterns in the data platform, proactively detecting pipeline issues and supporting operational monitoring.
+                            </li>
+                            <li>
+                                Built statistical and machine learning models to automate SLA assignment for data providers, improving operational efficiency and resulting in ~25% fewer late deliverables.
+                            </li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span>Python</span>
+                            <span>LangChain</span>
+                            <span>GPT-4</span>
+                            <span>RoBERTa</span>
+                            <span>ARIMA</span>
+                            <span>SQL</span>
+                            <span>Azure</span>
+                        </div>
+                    </div>
+                    <div class="job2 text">
+                        <div class="title">Web Scraping Specialist @ <a href="https://www.octavate.io/">Octavate</a>
+                        </div>
+                        <ul>
+                            <li>
+                                Collaborated with the data analytics team to identify new data sources and develop automated data scraping applications.
+                            </li>
+                            <li>
+                                Cleaned, processed, and analyzed the data to communicate patterns and insights to stakeholders.
+                            </li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span>Python</span>
+                            <span>BeautifulSoup</span>
+                            <span>Pandas</span>
+                        </div>
+                    </div>
+                    <div class="job3 text">
+                        <div class="title">Software Developer Intern @ <a href="https://www.instinet.com/">Instinet</a>
+                        </div>
+                        <ul>
+                            <li>
+                                Aided in the development of an application that could connect to the company's trading
+                                platforms as a client and send orders, execute trades, or receive market data.
+                            </li>
+                            <li>
+                                Consolidated testing between legacy and modern FIX-based trading platforms.
+                            </li>
+                            <li>
+                                Collaborated with senior members of the team under Agile software development principles
+                                to complete work in two-week sprints.
+                            </li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span>Java</span>
+                            <span>FIX Protocol</span>
+                            <span>Agile</span>
+                        </div>
+                    </div>
+                    <div class="job4 text">
+                        <div class="title">Research Intern @ <a href="https://www.sagerize.com/">Sagerize</a></div>
+                        <ul>
+                            <li>
+                                Analyzed the Common Data Set of over 120 colleges and universities around the United States
+                                and evaluated the factors that were the most important in admissions.
+                            </li>
+                            <li>
+                                Compiled data for over 60 college essays and resumes written by users of the platform.
+                            </li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span>Excel</span>
+                            <span>Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="projects">
+        <h1>Projects</h1>
+        <div class="projects">
+            <div class="project">
+                <div class="project-image">
+                    <img src="images/options.jpg" alt="Options Price Forecasting">
+                </div>
+                <div class="project-content">
+                    <h3>Options Price Forecasting</h3>
+                                        <p>Deep learning models for predicting option prices.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>Pandas</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/royzhou-dev/options-pricing" target="_blank">
+                            <i class="fab fa-github"></i> Source
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image">
+                    <img src="images/household.jpg" alt="Poverty Prediction ADS Audit">
+                </div>
+                <div class="project-content">
+                    <h3>Poverty Prediction ADS Audit</h3>
+                                        <p>Accuracy and fairness analysis of an automated decision system for predicting poverty level.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Scikit-learn</span>
+                        <span>Pandas</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/royzhou-dev/poverty-prediction-ads-audit" target="_blank">
+                            <i class="fab fa-github"></i> Source
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image">
+                    <img src="images/pay.png" alt="Competitiveness of Local Government Pay">
+                </div>
+                <div class="project-content">
+                    <h3>Competitiveness of Local Government Pay</h3>
+                                        <p>Analysis of local government pay using big data tools and technologies.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>PySpark</span>
+                        <span>Hadoop</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/royzhou-dev/local-government-pay" target="_blank">
+                            <i class="fab fa-github"></i> Source
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image">
+                    <img src="images/hands.png" alt="Fingertip Position Estimations">
+                </div>
+                <div class="project-content">
+                    <h3>Fingertip Position Estimations</h3>
+                                        <p>Convolutional neural network to estimate the positions of each fingertip on a robotic hand.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>PyTorch</span>
+                        <span>CNN</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/royzhou-dev/fingertips-position-estimation" target="_blank">
+                            <i class="fab fa-github"></i> Source
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image">
+                    <img src="images/movies.jpg" alt="IMDb Webscraper">
+                </div>
+                <div class="project-content">
+                    <h3>IMDb Webscraper</h3>
+                                        <p>Webscraper to collect data from IMDb's Top 1000 movies.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>BeautifulSoup</span>
+                        <span>Selenium</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/royzhou-dev/imdb-webscraper" target="_blank">
+                            <i class="fab fa-github"></i> Source
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-image">
+                    <img src="images/school.webp" alt="Predictive High School Admissions">
+                </div>
+                <div class="project-content">
+                    <h3>Predictive High School Admissions</h3>
+                                        <p>Analysis of the factors relevant for admissions to a specialized high school.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Matplotlib</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/royzhou-dev/middle-school-analysis" target="_blank">
+                            <i class="fab fa-github"></i> Source
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+        <form action="https://formsubmit.co/e665e498f0c5c5f760032765061f94f5" method="POST">
+            <h1>Feel free to reach out!</h1>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Your email" required>
+
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" placeholder="Your message" rows="10"></textarea>
+
+            <input type="hidden" name="_captcha" value="false">
+            <div class="center">
+                <input type="submit" value="Send Message">
+        </form>
+        </div>
+    </section>
+
+    <section id="footer">
+        <div class="links">
+            <a href="resume.pdf" title="Resume">
+                <i class="fa-solid fa-file-lines"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/royzhou-dev/" title="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/royzhou-dev" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://medium.com/@rz1478" title="Medium">
+                <i class="fa-brands fa-medium"></i>
+            </a>
+        </div>
+    </section>
+</body>
+
+</html>

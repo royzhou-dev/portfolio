@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(del \"c:\\\\Users\\\\royzh\\\\OneDrive\\\\Documents\\\\Projects\\\\portfolio-website\\\\app.js\")",
+      "Bash(del \"c:\\\\Users\\\\royzh\\\\OneDrive\\\\Documents\\\\Projects\\\\portfolio-website\\\\styles\\\\styles.scss\")",
+      "Bash(del \"c:\\\\Users\\\\royzh\\\\OneDrive\\\\Documents\\\\Projects\\\\portfolio-website\\\\styles\\\\styles.css.map\")"
+    ]
+  }
+}
