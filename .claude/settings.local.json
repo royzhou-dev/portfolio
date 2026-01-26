@@ -7,7 +7,8 @@
       "Bash(del \"c:\\\\Users\\\\royzh\\\\OneDrive\\\\Documents\\\\Projects\\\\portfolio-website\\\\styles\\\\styles.css.map\")",
       "Bash(python:*)",
       "Bash(powershell -Command \"[System.Drawing.Image]::FromFile\\(''c:\\\\Users\\\\royzh\\\\OneDrive\\\\Documents\\\\Projects\\\\portfolio\\\\images\\\\syllabal.png''\\).Size\")",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(git checkout:*)"
     ]
   }
 }
