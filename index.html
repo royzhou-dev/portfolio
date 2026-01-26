@@ -21,20 +21,31 @@
             <span class="hamburger-line"></span>
         </button>
         <ul>
-            <li style="--color:#0096e4"><a href="#home" data-text="&nbsp;home">&nbsp;home</a></li>
-            <li style="--color:#29c256"><a href="#experience" data-text="&nbsp;experience">&nbsp;experience</a></li>
-            <li style="--color:#f37fa1"><a href="#projects" data-text="&nbsp;projects">&nbsp;projects</a></li>
-            <li style="--color:#f0cf2b"><a href="#contact" data-text="&nbsp;contact">&nbsp;contact</a></li>
+            <li style="--color:#3b82f6"><a href="#home" data-text="&nbsp;home">&nbsp;home</a></li>
+            <li style="--color:#34d399"><a href="#experience" data-text="&nbsp;experience">&nbsp;experience</a></li>
+            <li style="--color:#f472b6"><a href="#projects" data-text="&nbsp;projects">&nbsp;projects</a></li>
+            <li style="--color:#fbbf24"><a href="#contact" data-text="&nbsp;contact">&nbsp;contact</a></li>
         </ul>
     </nav>
 
     <section id="home">
-        <h1>Hi, I'm <span class="name">Roy</span>.</h1>
-        <h2 class="typing-container">I'm <span class="typing-article">a </span><span class="typing-text"></span><span class="cursor">|</span></h2>
-        <p>
-            I currently work at BNY as a data scientist, where I design and deploy enterprise AI/ML solutions for the data platform. My work focuses on building intelligent agent-based systems and integrating AI capabilities into existing applications, supporting use cases across large-scale data operations, automated regulatory reporting, and enterprise-wide data discovery.<br><br>
-            I'm passionate about applying data science to solve complex business challenges. Feel free to explore my work and reach out!
-        </p>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hey, I'm <span class="name">Roy</span>.</h1>
+                <h2 class="typing-container">I'm <span class="typing-article">a </span><span class="typing-text"></span><span class="cursor">|</span></h2>
+                <p class="intro">
+                    At BNY, I design and deploy enterprise ML/AI systems that help 1,400+ people work smarter, from agents automate financial regulatory reporting to assistants that help with faster data discovery. I'm passionate about applying data science to solve complex business challenges. Feel free to explore my work and reach out!
+                </p>
+                <div class="status-bar">
+                    <span class="status-item"><i class="fas fa-briefcase"></i> BNY</span>
+                    <span class="status-item"><i class="fas fa-map-marker-alt"></i> NYC</span>
+                    <span class="status-item status-available"><span class="pulse"></span> Open to collaboration</span>
+                </div>
+            </div>
+            <div class="hero-photo">
+                <img src="images/headshot.jpg" alt="Roy Zhou">
+            </div>
+        </div>
     </section>
 
     <section id="experience">
@@ -304,9 +315,9 @@
     </section>
 
     <section id="contact">
-        <h1>Contact</h1>
+        <h1>Let's Connect</h1>
         <form action="https://formsubmit.co/e665e498f0c5c5f760032765061f94f5" method="POST">
-            <h1>Feel free to reach out!</h1>
+            <h1>I'd love to hear from you.</h1>
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" placeholder="Your name" required>
 
@@ -338,6 +349,7 @@
                 <i class="fa-brands fa-medium"></i>
             </a>
         </div>
+        <p class="footer-note">Built with curiosity. NYC.</p>
     </section>
     <script src="script.js"></script>
 </body>

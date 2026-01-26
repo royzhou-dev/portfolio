@@ -1,14 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap");
 
 /* ===== CSS Variables ===== */
 :root {
-  --color-background: #0f172a;
-  --color-surface: #1e293b;
-  --color-border: #334155;
-  --color-text: #e2e8f0;
-  --color-text-muted: #94a3b8;
-  --color-home: #60a5fa;
-  --color-experience: #4ade80;
+  --color-background: #111827;
+  --color-surface: #1f2937;
+  --color-border: #374151;
+  --color-text: #f3f4f6;
+  --color-text-muted: #9ca3af;
+  --color-primary: #3b82f6;
+  --color-home: #3b82f6;
+  --color-experience: #34d399;
   --color-projects: #f472b6;
   --color-contact: #fbbf24;
   --max-width: 1100px;
@@ -58,7 +59,7 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(17, 24, 39, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 100;
@@ -159,6 +160,17 @@ section h1 {
   letter-spacing: -0.02em;
 }
 
+section > h1::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 3px;
+  background: currentColor;
+  margin-right: 12px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
 /* ===== Home Section ===== */
 #home {
   min-height: 100vh;
@@ -169,11 +181,40 @@ section h1 {
   padding-bottom: 0;
 }
 
+#home .hero-content {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 48px;
+  align-items: center;
+}
+
+#home .hero-text {
+  max-width: 640px;
+}
+
+#home .hero-photo {
+  width: 280px;
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 3px solid var(--color-primary);
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+  opacity: 0;
+  animation: fadeIn 0.5s ease 0.2s forwards;
+}
+
+#home .hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 #home h1 {
+  font-family: "Space Grotesk", "Inter", -apple-system, sans-serif;
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.15;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   letter-spacing: -0.03em;
   opacity: 0;
   animation: fadeIn 0.5s ease forwards;
@@ -184,6 +225,7 @@ section h1 {
 }
 
 #home .typing-container {
+  font-family: "Space Grotesk", "Inter", -apple-system, sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--color-text-muted);
@@ -211,13 +253,72 @@ section h1 {
   }
 }
 
-#home p {
-  font-size: 1.125rem;
-  color: var(--color-text-muted);
-  max-width: 640px;
-  line-height: 1.7;
+#home .tagline {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 16px;
   opacity: 0;
   animation: fadeIn 0.5s ease 0.1s forwards;
+}
+
+#home .intro {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 0.15s forwards;
+}
+
+#home .status-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease 0.2s forwards;
+}
+
+#home .status-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+}
+
+#home .status-item i {
+  font-size: 0.75rem;
+  color: var(--color-primary);
+}
+
+#home .status-available {
+  color: var(--color-experience);
+}
+
+#home .status-available .pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--color-experience);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
 }
 
 @keyframes fadeIn {
@@ -280,7 +381,7 @@ section h1 {
   top: 0;
   height: 40px;
   width: 100%;
-  background: rgba(74, 222, 128, 0.1);
+  background: rgba(52, 211, 153, 0.1);
   border-left: 2px solid var(--color-experience);
   border-radius: 0 4px 4px 0;
   transition: top 0.15s ease;
@@ -415,8 +516,9 @@ section h1 {
 }
 
 #projects .projects .project:hover {
-  border-color: var(--color-text-muted);
-  transform: translateY(-2px);
+  border-color: var(--color-projects);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(244, 114, 182, 0.1);
 }
 
 #projects .projects .project .project-image {
@@ -430,7 +532,7 @@ section h1 {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.15);
+  background: rgba(17, 24, 39, 0.15);
   pointer-events: none;
 }
 
@@ -576,11 +678,13 @@ section h1 {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 #contact form input[type="submit"]:hover {
   opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.25);
 }
 
 /* ===== Footer ===== */
@@ -613,6 +717,13 @@ section h1 {
   background: var(--color-surface);
 }
 
+#footer .footer-note {
+  margin-top: 24px;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
   #projects .projects {
@@ -625,12 +736,38 @@ section h1 {
     padding: 64px 24px;
   }
 
+  #home .hero-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  #home .hero-text {
+    order: 2;
+    max-width: none;
+  }
+
+  #home .hero-photo {
+    order: 1;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  #home .status-bar {
+    justify-content: center;
+  }
+
   #home h1 {
     font-size: 2.25rem;
   }
 
   #home .typing-container {
     font-size: 1.25rem;
+  }
+
+  #home .tagline {
+    font-size: 1.125rem;
   }
 
   /* Hamburger Menu - Show button */
@@ -654,7 +791,7 @@ section h1 {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    background: rgba(15, 23, 42, 0.98);
+    background: rgba(17, 24, 39, 0.98);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border);
     max-height: 0;
@@ -731,9 +868,36 @@ section h1 {
     font-size: 1.125rem;
   }
 
+  #home .hero-photo {
+    width: 160px;
+    height: 160px;
+  }
+
+  #home .tagline {
+    font-size: 1rem;
+  }
+
+  #home .intro {
+    font-size: 0.9375rem;
+  }
+
+  #home .status-bar {
+    gap: 8px;
+  }
+
+  #home .status-item {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
   section h1 {
     font-size: 1.5rem;
     margin-bottom: 24px;
+  }
+
+  section > h1::before {
+    width: 16px;
+    margin-right: 8px;
   }
 }
 
