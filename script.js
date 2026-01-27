@@ -81,3 +81,52 @@ if (hamburger && navMenu) {
     }
   });
 }
+
+// ===== Contact Form Submission =====
+const contactForm = document.getElementById('contact-form');
+const formResult = document.getElementById('form-result');
+const submitBtn = document.getElementById('submit-btn');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const originalText = submitBtn.value;
+    submitBtn.value = 'Sending...';
+    submitBtn.disabled = true;
+    formResult.className = 'form-result';
+
+    try {
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData);
+
+      // Set dynamic subject and from_name based on sender's name
+      data.subject = `Portfolio Contact: ${data.name}`;
+      data.from_name = data.name;
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        formResult.className = 'form-result success';
+        formResult.textContent = `Thanks ${data.name}! I'll get back to you soon.`;
+        contactForm.reset();
+      } else {
+        formResult.className = 'form-result error';
+        formResult.textContent = result.message || 'Something went wrong. Please try again.';
+      }
+    } catch (error) {
+      formResult.className = 'form-result error';
+      formResult.textContent = 'Network error. Please check your connection and try again.';
+    } finally {
+      submitBtn.value = originalText;
+      submitBtn.disabled = false;
+      setTimeout(() => { formResult.style.display = 'none'; }, 5000);
+    }
+  });
+}

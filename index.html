@@ -315,9 +315,16 @@
     </section>
 
     <section id="contact">
-        <form action="https://formsubmit.co/e665e498f0c5c5f760032765061f94f5" method="POST">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
             <h1>Let's Connect</h1>
             <p class="form-subtitle">I'd love to hear from you.</p>
+
+            <!-- Web3Forms Config -->
+            <input type="hidden" name="access_key" value="71a22157-5a1d-4897-a9ee-1390e700770f">
+
+            <!-- Honeypot Spam Protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
+
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" placeholder="Your name" required>
 
@@ -327,11 +334,12 @@
             <label for="message">Message:</label>
             <textarea name="message" id="message" placeholder="Your message" rows="10"></textarea>
 
-            <input type="hidden" name="_captcha" value="false">
             <div class="center">
-                <input type="submit" value="Send Message">
+                <input type="submit" id="submit-btn" value="Send Message">
+            </div>
+
+            <div id="form-result" class="form-result"></div>
         </form>
-        </div>
     </section>
 
     <section id="footer">
