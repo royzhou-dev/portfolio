@@ -847,8 +847,12 @@ section > h1::before {
     border-bottom: none;
   }
 
-  nav ul li a::after {
+  nav ul li a::before {
     display: none;
+  }
+
+  nav ul li a:hover {
+    color: var(--color);
   }
 
   #experience .tablist {
