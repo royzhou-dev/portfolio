@@ -89,24 +89,20 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a::after {
-  content: "";
+nav ul li a::before {
+  content: attr(data-text);
   position: absolute;
-  bottom: 16px;
   left: 16px;
-  right: 16px;
-  height: 2px;
-  background: var(--color);
-  transform: scaleX(0);
-  transition: transform 0.15s ease;
-}
-
-nav ul li a:hover {
+  top: 20px;
   color: var(--color);
+  width: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  border-right: 2px solid var(--color);
 }
 
-nav ul li a:hover::after {
-  transform: scaleX(1);
+nav ul li a:hover::before {
+  width: calc(100% - 32px);
 }
 
 /* ===== Hamburger Menu ===== */
