@@ -205,6 +205,20 @@ section > h1::before {
   object-fit: cover;
 }
 
+#home .hero-photo .photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.05em;
+}
+
 #home h1 {
   font-family: "Space Grotesk", "Inter", -apple-system, sans-serif;
   font-size: 3rem;
