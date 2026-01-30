@@ -829,6 +829,7 @@ section > h1::before {
 
   nav {
     position: relative;
+    height: var(--nav-height);
   }
 
   nav ul {
