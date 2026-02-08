@@ -34,6 +34,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   line-height: 1.6;
+  padding-bottom: 68px;
 }
 
 /* Custom Scrollbar */
@@ -742,19 +743,23 @@ section > h1::before {
   color: #ef4444;
 }
 
-/* ===== Footer ===== */
-#footer {
-  padding: 48px 24px;
-  text-align: center;
-}
-
-#footer .links {
+/* ===== Social Bar ===== */
+#social-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 16px;
+  padding: 12px 24px;
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 100;
 }
 
-#footer .links a {
+#social-bar a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -767,16 +772,9 @@ section > h1::before {
   transition: color 0.15s ease, background 0.15s ease;
 }
 
-#footer .links a:hover {
+#social-bar a:hover {
   color: var(--color-text);
   background: var(--color-surface);
-}
-
-#footer .footer-note {
-  margin-top: 24px;
-  font-size: 0.8125rem;
-  color: var(--color-text-muted);
-  letter-spacing: 0.02em;
 }
 
 /* ===== Responsive ===== */
@@ -994,8 +992,8 @@ section > h1::before {
     width: 100%;
   }
 
-  #footer {
-    padding: 32px 16px;
+  #social-bar {
+    padding: 10px 16px;
   }
 }
 
