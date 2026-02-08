@@ -428,6 +428,13 @@ section > h1::before {
   margin-bottom: 16px;
 }
 
+#experience .tablist .tablist-content .text-content .text p {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
 #experience .tablist .tablist-content .text-content .text ul {
   color: var(--color-text-muted);
   padding-left: 20px;
